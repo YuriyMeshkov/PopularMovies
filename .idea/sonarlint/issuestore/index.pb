@@ -1,10 +1,6 @@
 
 V
 &app/src/main/res/layout/movie_item.xml,a\1\a1ceff8a3b67a540e62ce938c3549c4a5d93ae83
-Y
-)app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6
-c
-3app/src/main/res/layout/popular_movies_fragment.xml,d\0\d011cfb87c667e041b995bc37f9efb73da9bc103
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @

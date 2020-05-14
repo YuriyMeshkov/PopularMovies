@@ -174,18 +174,6 @@ class PopularMoviesViewModel : ViewModel() {
         return result
     }
 
-    private suspend fun getMovieDetailAndBigPoster(
-        path: String,
-        posterNameFile: String,
-        idMovie: Int
-    ) {
-        getPosterFromInternet(getPosterBigPath(path), posterNameFile, 3)
-        val result = repositoryMoviesTmdb.loadingMovieDetailsJson(idMovie)
-        if (result is Result.Success) {
-            writeJsonStringsToMemory(result.data, getMovieDetailPath(path), idMovie.toString())
-        }
-    }
-
     private suspend fun writeJsonStringsToMemory(
         jsonString: String?,
         path: String,

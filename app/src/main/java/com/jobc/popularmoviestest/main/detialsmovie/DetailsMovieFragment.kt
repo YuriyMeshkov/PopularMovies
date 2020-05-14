@@ -47,7 +47,7 @@ class DetailsMovieFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         initViewModel()
         initLiveData()
-        getPoster()
+        updateUI(movie)
     }
 
     private fun initData() {
@@ -66,7 +66,6 @@ class DetailsMovieFragment : Fragment() {
     private fun initLiveDataLoadPoster() {
         viewModel.loadingPoster.observe(this.viewLifecycleOwner, Observer {
             val posterLoaded = it ?: return@Observer
-            getMovieDetails()
             pbLoadingPosterBig.visibility = View.GONE
             when(posterLoaded.success != null) {
                 true -> {
@@ -181,12 +180,12 @@ class DetailsMovieFragment : Fragment() {
         }
     }
 
-    private fun getPoster() {
+    private fun getPoster(movie: Movie) {
         pbLoadingPosterBig.visibility = View.VISIBLE
         viewModel.loadPoster(movie.posterPath, getCachePath())
     }
 
-    private fun getMovieDetails() {
+    private fun getMovieDetails(movie: Movie) {
         viewModel.loadMovieDetails(getCachePath(), movie.id)
     }
 
@@ -196,4 +195,8 @@ class DetailsMovieFragment : Fragment() {
             .append(PATH_NAME_MOVIE_CACHE)
             .toString()
 
+    fun updateUI(movie: Movie) {
+        getPoster(movie)
+        getMovieDetails(movie)
+    }
 }

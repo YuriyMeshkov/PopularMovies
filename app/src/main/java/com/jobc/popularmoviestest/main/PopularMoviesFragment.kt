@@ -1,5 +1,6 @@
 package com.example.popularmoviestest.main
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.popularmoviestest.*
 import com.example.popularmoviestest.data.movies.model.movie.Movie
 import com.example.popularmoviestest.main.adapter.MoviesAdapterRW
-import com.example.popularmoviestest.main.detialsmovie.DetailsMovieActivity
 import com.example.popularmoviestest.main.utils.ItemOffsetDecoration
+import com.jobc.popularmoviestest.main.utils.Callbacks
 import kotlinx.android.synthetic.main.popular_movies_fragment.*
 
 
@@ -22,6 +23,12 @@ class PopularMoviesFragment : Fragment() {
     private lateinit var viewModel: PopularMoviesViewModel
     private var adapterRW: MoviesAdapterRW? = null
     private var downloadPage = 1
+    private var callbacks: Callbacks? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callbacks = context as Callbacks
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +44,11 @@ class PopularMoviesFragment : Fragment() {
         initLiveData()
         initButtons()
         getPopularMovie(downloadPage)
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callbacks = null
     }
 
     private fun initRecyclerView() {
@@ -69,10 +81,13 @@ class PopularMoviesFragment : Fragment() {
                                 viewModel.loadingPoster,
                                 this
                             ) {movieId ->
-                                createDetailsMovieActivity(movies, movieId)
+                                createDetailsMovieActivityOrFragment(movies, movieId)
                             }
                         rvMovies.adapter = adapterRW
                     } else {
+                        if (movies.size == 1) {
+                            createDetailsMovieActivityOrFragment(movies, movies[0].id)
+                        }
                         updateAdapterRV(movies)
                     }
                 }
@@ -175,7 +190,7 @@ class PopularMoviesFragment : Fragment() {
             .append("/")
             .toString()
 
-    private fun createDetailsMovieActivity(movies: List<Movie>, movieId: Int) {
+    private fun createDetailsMovieActivityOrFragment(movies: List<Movie>, movieId: Int) {
         var movie: Movie? = null
         movies.forEach {
             if (it.id == movieId) {
@@ -183,8 +198,7 @@ class PopularMoviesFragment : Fragment() {
             }
         }
         movie?.let {
-            val intent = DetailsMovieActivity.newIntent(activity?.applicationContext!!, it)
-            startActivity(intent)
+            callbacks?.onMovieSelected(it)
         }
     }
 
