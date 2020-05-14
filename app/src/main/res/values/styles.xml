@@ -1,0 +1,104 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="KoralRevised" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="buttonStyle">@style/NotCapsButton</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="titleTextColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="NotCapsButton" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="SplashTheme" parent="KoralRevised">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
+
+    <style name="TextBlack18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="Btn1ClickableWhite">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_white_ripple_1</item>
+    </style>
+
+    <style name="Btn2ClickableWhite">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_white_ripple_2</item>
+    </style>
+
+    <style name="Btn2TextWhite">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="Btn3TextWhite">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="BtnW1TextWhite">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@drawable/bg_primary_ripple</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="textColorPrimary18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textColorPrimary14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="secondTitlePrimary16">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="textColorBlack14">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="secondText">
+        <item name="android:textColor">@color/thirdTextColor</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Популярні фільми</string>
+    <string name="loading">Завантаження...</string>
+    <string name="error_loading">Помилка завантаження</string>
+    <string name="error_result">Перевірте зв\'язок</string>
+    <string name="try_loading">Сробувати ще раз</string>
+    <string name="poster">Постер</string>
+    <string name="next_page">Наступна сторінка</string>
+    <string name="previous_page">Попередня сторінка</string>
+    <string name="list_popular_movies">СПИСОК ПОПУЛЯРНИХ ФІЛЬМІВ</string>
+    <string name="origin_name_title">Оригінальна назва:</string>
+    <string name="release_date">Дата виходу:</string>
+    <string name="country">Страна:</string>
+    <string name="budget">Бюджет $:</string>
+    <string name="revenue">Дохід $:</string>
+    <string name="genres">Жанр:</string>
+    <string name="popularity">Популярність:</string>
+    <string name="rating">Рейтинг:</string>
+    <string name="runtime">Тривалість</string>
+    <string name="minutes">хв.</string>
+    <string name="unknown_all">немає даних</string>
+</resources>

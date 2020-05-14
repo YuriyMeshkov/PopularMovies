@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Популярные фильмы</string>
+    <string name="loading">Загрузка...</string>
+    <string name="error_loading">Ошибка загрузки</string>
+    <string name="error_result">Проверьте связь</string>
+    <string name="try_loading">Попробуйте еще раз</string>
+    <string name="poster">Постер</string>
+    <string name="next_page">Следующая страница</string>
+    <string name="previous_page">Предыдущая страница</string>
+    <string name="list_popular_movies">СПИСОК ПОПУЛЯРНИХ ФИЛЬМОВ</string>
+    <string name="origin_name_title">Оригинальное название:</string>
+    <string name="release_date">Дата выхода:</string>
+    <string name="country">Страна:</string>
+    <string name="budget">Бюджет $:</string>
+    <string name="revenue">Доход $:</string>
+    <string name="genres">Жанр:</string>
+    <string name="popularity">Популярность:</string>
+    <string name="rating">Рейтинг:</string>
+    <string name="runtime">Время</string>
+    <string name="minutes">мин.</string>
+    <string name="unknown_all">нет данных</string>
+</resources>
