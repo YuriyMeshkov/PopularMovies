@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.main.adapter
+package com.jobc.popularmoviestest.main.adapter
 
 import android.content.res.Resources
 import android.graphics.BitmapFactory
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.*
 import androidx.recyclerview.widget.RecyclerView
-import com.example.popularmoviestest.R
-import com.example.popularmoviestest.data.movies.model.movie.Movie
-import com.example.popularmoviestest.main.utils.ResultLoadPoster
+import com.jobc.popularmoviestest.R
+import com.jobc.popularmoviestest.data.movies.model.movie.Movie
+import com.jobc.popularmoviestest.main.utils.ResultLoadPoster
 import kotlinx.android.synthetic.main.movie_item.view.*
 
 class MoviesAdapterRW (
@@ -21,7 +21,6 @@ class MoviesAdapterRW (
 
     private var postersListLoaded: MutableList <ResultLoadPoster> = mutableListOf()
     private var movies = moviesList
-    private var isNotifyDataSetChanged = false
 
     init {
         liveDataLoadPoster.observe(ownerLc, Observer{
@@ -48,9 +47,7 @@ class MoviesAdapterRW (
     override fun getItemCount() = movies.size
 
     override fun onBindViewHolder(holder: MoviesHolder, position: Int) {
-        isNotifyDataSetChanged = true
         holder.bind(movies[position], clickListener)
-        isNotifyDataSetChanged = false
     }
 
     private fun setPostersToMovies(postersListLoaded: List<ResultLoadPoster>) {

@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.main.utils
+package com.jobc.popularmoviestest.main.utils
 
 import android.content.res.Resources
 import android.graphics.Rect

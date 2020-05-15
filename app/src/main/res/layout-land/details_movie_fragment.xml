@@ -12,7 +12,7 @@
         android:id="@+id/containerTop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -51,7 +51,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3">
+        android:background="@color/colorWhite"
+        android:layout_weight="1">
 
         <ScrollView
             android:id="@+id/containerBottom"
@@ -86,7 +87,7 @@
 
                     <TextView
                         android:id="@+id/tvOriginNameTitle"
-                        style="@style/textColorPrimary20"
+                        style="@style/textColorPrimary14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -97,7 +98,7 @@
 
                     <TextView
                         android:id="@+id/tvOriginalName"
-                        style="@style/textColorBlack20"
+                        style="@style/textColorBlack14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -116,7 +117,7 @@
 
                 <TextView
                     android:id="@+id/tvDataReleaseTitle"
-                    style="@style/textColorPrimary20"
+                    style="@style/textColorPrimary14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -127,7 +128,7 @@
 
                 <TextView
                     android:id="@+id/tvDataRelease"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -147,7 +148,7 @@
 
                     <TextView
                         android:id="@+id/tvCountryTitle"
-                        style="@style/textColorPrimary20"
+                        style="@style/textColorPrimary14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -158,7 +159,7 @@
 
                     <TextView
                         android:id="@+id/tvCountry"
-                        style="@style/textColorBlack20"
+                        style="@style/textColorBlack14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -181,7 +182,7 @@
 
                 <TextView
                     android:id="@+id/tvBudgetTitle"
-                    style="@style/textColorPrimary20"
+                    style="@style/textColorPrimary14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -192,7 +193,7 @@
 
                 <TextView
                     android:id="@+id/tvBudget"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -204,7 +205,7 @@
 
                 <TextView
                     android:id="@+id/tvRevenueTitle"
-                    style="@style/textColorPrimary20"
+                    style="@style/textColorPrimary14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -215,7 +216,7 @@
 
                 <TextView
                     android:id="@+id/tvRevenue"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -235,7 +236,7 @@
 
                     <TextView
                         android:id="@+id/tvGenresTitle"
-                        style="@style/textColorPrimary20"
+                        style="@style/textColorPrimary14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -253,7 +254,7 @@
 
                     <TextView
                         android:id="@+id/tvGenres"
-                        style="@style/textColorBlack20"
+                        style="@style/textColorBlack14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -266,7 +267,7 @@
 
                 <TextView
                     android:id="@+id/tvPopularityTitle"
-                    style="@style/textColorPrimary20"
+                    style="@style/textColorPrimary14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -277,7 +278,7 @@
 
                 <TextView
                     android:id="@+id/tvPopularity"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -289,7 +290,7 @@
 
                 <TextView
                     android:id="@+id/tvVoteAverageTitle"
-                    style="@style/textColorPrimary20"
+                    style="@style/textColorPrimary14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -300,7 +301,7 @@
 
                 <TextView
                     android:id="@+id/tvVoteAverage"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -311,7 +312,7 @@
 
                 <TextView
                     android:id="@+id/tvLeftBracketTitle"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -322,7 +323,7 @@
 
                 <TextView
                     android:id="@+id/tvVoteCount"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
@@ -332,7 +333,7 @@
 
                 <TextView
                     android:id="@+id/tvRightBracketTitle"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=")"
@@ -342,7 +343,7 @@
 
                 <TextView
                     android:id="@+id/tvRunTimeTitle"
-                    style="@style/textColorPrimary20"
+                    style="@style/textColorPrimary14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -354,7 +355,7 @@
 
                 <TextView
                     android:id="@+id/tvRunTime"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -364,7 +365,7 @@
 
                 <TextView
                     android:id="@+id/tvMinutesTitle"
-                    style="@style/textColorBlack20"
+                    style="@style/textColorBlack14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -387,7 +388,7 @@
 
                     <TextView
                         android:id="@+id/tvOverView"
-                        style="@style/textColorBlack20"
+                        style="@style/textColorBlack14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.data.movies.utils
+package com.jobc.popularmoviestest.data.movies.utils
 
 
 sealed class Result<out T : Any?> {

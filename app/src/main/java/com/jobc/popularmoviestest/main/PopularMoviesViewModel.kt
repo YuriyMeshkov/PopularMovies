@@ -1,19 +1,20 @@
-package com.example.popularmoviestest.main
+package com.jobc.popularmoviestest.main
 
 import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.popularmoviestest.data.movies.model.movie.Movie
-import com.example.popularmoviestest.data.movies.repository.RepositoryMoviesInternalMemory
-import com.example.popularmoviestest.data.movies.repository.RepositoryMoviesTmdb
-import com.example.popularmoviestest.data.movies.utils.Result
-import com.example.popularmoviestest.main.utils.ResultLoadPoster
-import com.example.popularmoviestest.main.utils.ResultRequestMovies
+import com.jobc.popularmoviestest.data.movies.model.movie.Movie
+import com.jobc.popularmoviestest.data.movies.repository.RepositoryMoviesInternalMemory
+import com.jobc.popularmoviestest.data.movies.repository.RepositoryMoviesTmdb
+import com.jobc.popularmoviestest.data.movies.utils.Result
+import com.jobc.popularmoviestest.main.utils.ResultLoadPoster
+import com.jobc.popularmoviestest.main.utils.ResultRequestMovies
 import kotlinx.coroutines.*
 
 class PopularMoviesViewModel : ViewModel() {
+
     private val scope = viewModelScope
     private val repositoryMoviesTmdb = RepositoryMoviesTmdb()
     private val repositoryMoviesInternalMemory = RepositoryMoviesInternalMemory()
@@ -24,7 +25,6 @@ class PopularMoviesViewModel : ViewModel() {
 
     private val _loadingPoster = MutableLiveData<List<ResultLoadPoster>>()
     val loadingPoster: LiveData<List<ResultLoadPoster>> = _loadingPoster
-
 
     fun getPopularMovie(pathCacheMovie: String, page: Int) {
         scope.launch {
@@ -103,35 +103,22 @@ class PopularMoviesViewModel : ViewModel() {
         scope.launch {
             delay(1)
             val coroutineContext = Dispatchers.IO
-            val listPosters: MutableList<ResultLoadPoster> = mutableListOf()
-            listMovies.forEach { movie ->
-                when (movie.posterPath != null) {
-                    true -> {
-                        val resultPoster = withContext(coroutineContext) {
-                            getPoster(path, movie.posterPath)
-                        }
-                        if (resultPoster is Result.Success) {
-                            listPosters.add(
-                                ResultLoadPoster(
-                                    bitmap = resultPoster.data,
-                                    posterFileName = movie.posterPath,
-                                    id = movie.id
-                                )
-                            )
-                        } else {
-                            listPosters.add(
-                                ResultLoadPoster(
-                                    id = movie.id
-                                )
-                            )
-                        }
+            val listPosters = mutableListOf<ResultLoadPoster>()
+            listMovies.forEach {movie ->
+                listPosters.add(
+                    ResultLoadPoster(
+                        posterFileName = movie.posterPath,
+                        id = movie.id
+                    )
+                )
+            }
+            listPosters.forEach { movie ->
+                if (movie.posterFileName != null) {
+                    val resultPoster = withContext(coroutineContext) {
+                        getPoster(path, movie.posterFileName)
                     }
-                    false -> {
-                        listPosters.add(
-                            ResultLoadPoster(
-                                id = movie.id
-                            )
-                        )
+                    if (resultPoster is Result.Success) {
+                        movie.bitmap = resultPoster.data
                     }
                 }
                 _loadingPoster.value = listPosters

@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.main
+package com.jobc.popularmoviestest.main
 
 import android.content.Context
 import android.os.Bundle
@@ -10,11 +10,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.popularmoviestest.*
-import com.example.popularmoviestest.data.movies.model.movie.Movie
-import com.example.popularmoviestest.main.adapter.MoviesAdapterRW
-import com.example.popularmoviestest.main.utils.ItemOffsetDecoration
-import com.jobc.popularmoviestest.main.utils.Callbacks
+import com.jobc.popularmoviestest.*
+import com.jobc.popularmoviestest.data.movies.model.movie.Movie
+import com.jobc.popularmoviestest.main.adapter.MoviesAdapterRW
+import com.jobc.popularmoviestest.main.utils.ItemOffsetDecoration
+import com.jobc.popularmoviestest.main.utils.MovieSelectedCallback
 import kotlinx.android.synthetic.main.popular_movies_fragment.*
 
 
@@ -23,11 +23,11 @@ class PopularMoviesFragment : Fragment() {
     private lateinit var viewModel: PopularMoviesViewModel
     private var adapterRW: MoviesAdapterRW? = null
     private var downloadPage = 1
-    private var callbacks: Callbacks? = null
+    private var movieSelectedCallback: MovieSelectedCallback? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        callbacks = context as Callbacks
+        movieSelectedCallback = context as MovieSelectedCallback
     }
 
     override fun onCreateView(
@@ -48,7 +48,7 @@ class PopularMoviesFragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
-        callbacks = null
+        movieSelectedCallback = null
     }
 
     private fun initRecyclerView() {
@@ -85,9 +85,6 @@ class PopularMoviesFragment : Fragment() {
                             }
                         rvMovies.adapter = adapterRW
                     } else {
-                        if (movies.size == 1) {
-                            createDetailsMovieActivityOrFragment(movies, movies[0].id)
-                        }
                         updateAdapterRV(movies)
                     }
                 }
@@ -178,6 +175,7 @@ class PopularMoviesFragment : Fragment() {
         btnPreviousPage.setOnClickListener {
             if(downloadPage != 1) {
                 downloadPage --
+                @Suppress
                 getPopularMovie(downloadPage)
             }
         }
@@ -198,8 +196,7 @@ class PopularMoviesFragment : Fragment() {
             }
         }
         movie?.let {
-            callbacks?.onMovieSelected(it)
+            movieSelectedCallback?.onMovieSelected(it)
         }
     }
-
 }

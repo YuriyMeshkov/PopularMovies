@@ -1,12 +1,12 @@
-package com.example.popularmoviestest.data.movies.tmdb
+package com.jobc.popularmoviestest.data.movies.tmdb
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import com.example.popularmoviestest.data.movies.model.ConfigurationList
-import com.example.popularmoviestest.data.movies.model.ConfigurationRequestForPoster
-import com.example.popularmoviestest.data.movies.model.movie.ListMovies
-import com.example.popularmoviestest.data.movies.utils.Result
+import com.jobc.popularmoviestest.data.movies.model.ConfigurationList
+import com.jobc.popularmoviestest.data.movies.model.ConfigurationRequestForPoster
+import com.jobc.popularmoviestest.data.movies.model.movie.ListMovies
+import com.jobc.popularmoviestest.data.movies.utils.Result
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

@@ -1,12 +1,12 @@
-package com.example.popularmoviestest.main.detialsmovie
+package com.jobc.popularmoviestest.main.detialsmovie
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.popularmoviestest.R
-import com.example.popularmoviestest.data.movies.model.movie.Movie
-import com.example.popularmoviestest.main.FRAGMENT_DETAILS_MOVIE
+import com.jobc.popularmoviestest.R
+import com.jobc.popularmoviestest.data.movies.model.movie.Movie
+import com.jobc.popularmoviestest.main.FRAGMENT_DETAILS_MOVIE
 
 class DetailsMovieActivity : AppCompatActivity(R.layout.activity_details_movie) {
 

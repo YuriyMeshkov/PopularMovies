@@ -1,6 +1,6 @@
-package com.example.popularmoviestest.main.detialsmovie.utils
+package com.jobc.popularmoviestest.main.detialsmovie.utils
 
-import com.example.popularmoviestest.data.movies.model.moviesdetails.MovieDetails
+import com.jobc.popularmoviestest.data.movies.model.moviesdetails.MovieDetails
 
 class ResultMovieDetails (
     val success: MovieDetails? = null,

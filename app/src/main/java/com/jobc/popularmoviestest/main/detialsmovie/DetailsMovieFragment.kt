@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.main.detialsmovie
+package com.jobc.popularmoviestest.main.detialsmovie
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,13 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.popularmoviestest.R
-import com.example.popularmoviestest.data.movies.model.movie.Movie
-import com.example.popularmoviestest.data.movies.model.moviesdetails.GenresItem
-import com.example.popularmoviestest.data.movies.model.moviesdetails.MovieDetails
-import com.example.popularmoviestest.data.movies.model.moviesdetails.ProductionCountriesItem
-import com.example.popularmoviestest.main.PATH_NAME_MOVIE_CACHE
+import com.jobc.popularmoviestest.R
+import com.jobc.popularmoviestest.data.movies.model.movie.Movie
+import com.jobc.popularmoviestest.data.movies.model.moviesdetails.GenresItem
+import com.jobc.popularmoviestest.data.movies.model.moviesdetails.MovieDetails
+import com.jobc.popularmoviestest.data.movies.model.moviesdetails.ProductionCountriesItem
+import com.jobc.popularmoviestest.main.PATH_NAME_MOVIE_CACHE
 import kotlinx.android.synthetic.main.details_movie_fragment.*
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class DetailsMovieFragment : Fragment() {
@@ -21,7 +24,6 @@ class DetailsMovieFragment : Fragment() {
     companion object {
 
         private lateinit var movie: Movie
-
         private const val MOVIE_DETAILS_FOR_SHOW = "movie_details_for_show"
 
         fun newInstance(movie: Movie) : DetailsMovieFragment {
@@ -99,9 +101,10 @@ class DetailsMovieFragment : Fragment() {
             }
         })
     }
+
     private fun setMovieDetailsToViewSuccess(movieDetails: MovieDetails) {
         tvOriginalName.text = movieDetails.originalTitle
-        tvDataRelease.text = movieDetails.releaseDate
+        tvDataRelease.text = getDate(movieDetails.releaseDate)
         tvCountry.text = getCountries(movieDetails.productionCountries)
         when(movieDetails.budget) {
             0 -> tvBudget.setText(R.string.unknown_all)
@@ -134,6 +137,7 @@ class DetailsMovieFragment : Fragment() {
     private fun setMovieDetailsToViewError() {
         tvOriginalName.text = movie.originalTitle
         tvDataRelease.text = movie.releaseDate
+        tvDataRelease.text = getDate(movie.releaseDate)
         tvCountry.setText(R.string.unknown_all)
         tvBudget.setText(R.string.unknown_all)
         tvRevenue.setText(R.string.unknown_all)
@@ -162,6 +166,7 @@ class DetailsMovieFragment : Fragment() {
             }
         }
     }
+
     private fun getGenres(genres: List<GenresItem>?) : String{
         return when(genres) {
             null -> {
@@ -194,6 +199,17 @@ class DetailsMovieFragment : Fragment() {
             .append(activity?.filesDir.toString())
             .append(PATH_NAME_MOVIE_CACHE)
             .toString()
+
+    private fun getDate(dateStr: String) : String {
+        val format = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        return try {
+            val date = format.parse(dateStr)
+            val dateFormat = android.text.format.DateFormat.getDateFormat(context)
+            dateFormat.format(date!!)
+        } catch (e: ParseException) {
+            dateStr
+        }
+    }
 
     fun updateUI(movie: Movie) {
         getPoster(movie)

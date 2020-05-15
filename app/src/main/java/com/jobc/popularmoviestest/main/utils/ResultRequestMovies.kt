@@ -1,6 +1,6 @@
-package com.example.popularmoviestest.main.utils
+package com.jobc.popularmoviestest.main.utils
 
-import com.example.popularmoviestest.data.movies.model.movie.Movie
+import com.jobc.popularmoviestest.data.movies.model.movie.Movie
 
 class ResultRequestMovies(
     val success: List<Movie>? = null,

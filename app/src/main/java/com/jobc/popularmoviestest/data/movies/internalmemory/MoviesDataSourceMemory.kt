@@ -1,8 +1,8 @@
-package com.example.popularmoviestest.data.movies.internalmemory
-import com.example.popularmoviestest.data.movies.utils.Result
+package com.jobc.popularmoviestest.data.movies.internalmemory
+import com.jobc.popularmoviestest.data.movies.utils.Result
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import com.example.popularmoviestest.data.movies.model.movie.ListMovies
+import com.jobc.popularmoviestest.data.movies.model.movie.ListMovies
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

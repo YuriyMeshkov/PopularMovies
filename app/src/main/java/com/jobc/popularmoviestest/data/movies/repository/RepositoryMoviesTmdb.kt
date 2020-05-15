@@ -1,10 +1,10 @@
-package com.example.popularmoviestest.data.movies.repository
+package com.jobc.popularmoviestest.data.movies.repository
 
 import android.graphics.Bitmap
-import com.example.popularmoviestest.data.movies.model.movie.ListMovies
-import com.example.popularmoviestest.data.movies.tmdb.LoadingMoviesFromTmdb
-import com.example.popularmoviestest.data.movies.tmdb.LoadingMoviesInterface
-import com.example.popularmoviestest.data.movies.utils.Result
+import com.jobc.popularmoviestest.data.movies.model.movie.ListMovies
+import com.jobc.popularmoviestest.data.movies.tmdb.LoadingMoviesFromTmdb
+import com.jobc.popularmoviestest.data.movies.tmdb.LoadingMoviesInterface
+import com.jobc.popularmoviestest.data.movies.utils.Result
 
 class RepositoryMoviesTmdb {
 

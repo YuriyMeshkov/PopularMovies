@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.main.detialsmovie.utils
+package com.jobc.popularmoviestest.main.detialsmovie.utils
 
 import android.graphics.Bitmap
 

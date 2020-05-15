@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.data.movies.model.moviesdetails
+package com.jobc.popularmoviestest.data.movies.model.moviesdetails
 
 import com.google.gson.annotations.SerializedName
 
@@ -34,21 +34,7 @@ data class MovieDetails(@SerializedName("original_language")
                         val runtime: Int = 0,
                         @SerializedName("poster_path")
                         val posterPath: String? = null,
-                        /*@SerializedName("spoken_languages")
-                        val spokenLanguages: List<SpokenLanguagesItem>?,*/
-                        /*@SerializedName("production_companies")
-                        val productionCompanies: List<ProductionCompaniesItem>?,*/
                         @SerializedName("release_date")
                         val releaseDate: String = "",
                         @SerializedName("vote_average")
                         val voteAverage: Double = 0.0)
-                        /*@SerializedName("belongs_to_collection")
-                        val belongsToCollection: String? = null,*/
-                       /* @SerializedName("tagline")
-                        val tagline: String = "",*/
-                        /*@SerializedName("adult")
-                        val adult: Boolean = false,*/
-                        /*@SerializedName("homepage")
-                        val homepage: String = "",*/
-                        /*@SerializedName("status")
-                        val status: String = ""*/

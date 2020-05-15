@@ -1,15 +1,15 @@
-package com.example.popularmoviestest.main
+package com.jobc.popularmoviestest.main
 
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
-import com.example.popularmoviestest.R
-import com.example.popularmoviestest.data.movies.model.movie.Movie
-import com.example.popularmoviestest.main.detialsmovie.DetailsMovieActivity
-import com.example.popularmoviestest.main.detialsmovie.DetailsMovieFragment
-import com.jobc.popularmoviestest.main.utils.Callbacks
+import com.jobc.popularmoviestest.R
+import com.jobc.popularmoviestest.data.movies.model.movie.Movie
+import com.jobc.popularmoviestest.main.detialsmovie.DetailsMovieActivity
+import com.jobc.popularmoviestest.main.detialsmovie.DetailsMovieFragment
+import com.jobc.popularmoviestest.main.utils.MovieSelectedCallback
 
 const val FILE_NAME_LIST_MOVIES = "listMovies"
 const val FILE_NAME_CONFIGURATION_URL_POSTER ="configUrlPoster"
@@ -21,11 +21,11 @@ const val FRAGMENT_POPULAR_MOVIES = "popularMoviesFragment"
 const val FRAGMENT_DETAILS_MOVIE = "derailsMovieFragment"
 
 
-class MainActivity : AppCompatActivity(), Callbacks {
+class MainActivity : AppCompatActivity(), MovieSelectedCallback {
 
     @LayoutRes
     private fun getLayoutResId() =
-        R.layout.activity_masterdetail
+        R.layout.activity_master_detail
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,10 +70,7 @@ class MainActivity : AppCompatActivity(), Callbacks {
     }
 
     private fun setOrientationScreen() {
-        if(findViewById<View>(R.id.containerFragmentDetailsMovie) != null) {
-            @Suppress
-            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-        } else {
+        if(findViewById<View>(R.id.containerFragmentDetailsMovie) == null) {
             @Suppress
             requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         }

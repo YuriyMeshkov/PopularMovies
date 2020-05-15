@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.data.movies.model.movie
+package com.jobc.popularmoviestest.data.movies.model.movie
 
 import android.graphics.Bitmap
 import android.os.Parcel
@@ -36,7 +36,6 @@ data class Movie(
         1 == source.readInt(),
         source.readString()!!,
         source.readString()!!,
-        //ArrayList<Int>().apply { source.readList(this, Int::class.java.classLoader) },
         source.readInt(),
         source.readString()!!,
         source.readString()!!,
@@ -56,7 +55,6 @@ data class Movie(
         writeInt((if (adult) 1 else 0))
         writeString(overview)
         writeString(releaseDate)
-        //writeList(genreIds)
         writeInt(id)
         writeString(originalTitle)
         writeString(originalLanguage)

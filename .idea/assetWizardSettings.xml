@@ -51,7 +51,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="scalingPercent" value="104" />
+                                                <entry key="scalingPercent" value="148" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -61,7 +61,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundImage" value="D:\AndroidProgramir\JobsTest\PopularMoviesTest\icon.jpg" />
+                                      <entry key="foregroundImage" value="D:\AndroidProgramir\JobsTest\icon.jpg" />
                                     </map>
                                   </option>
                                 </PersistentState>

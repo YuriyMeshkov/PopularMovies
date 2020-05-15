@@ -1,4 +1,4 @@
-package com.example.popularmoviestest.data.movies.model.movie
+package com.jobc.popularmoviestest.data.movies.model.movie
 
 import android.graphics.Bitmap
 
